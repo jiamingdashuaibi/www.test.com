@@ -105,7 +105,7 @@ select * from join1 join join2
             limit 5;
 
 
-//join  内连接(inner join)！！！！！！！！！
+//join  内连接(inner join)！！！
 select * from test as t join test_uid as u
 		on t.uid = u.id
 		where t.uid = 1;
