@@ -17,5 +17,5 @@ $arr = array(
     'charset'=>'utf8'
 );
 $db = Db::getInstance($arr);
-$a = $db->fetchOne("select * from `table` where id = 50");
+$a = $db->fetchOne("select * from tp_article where id = 1");
 var_dump($a);
