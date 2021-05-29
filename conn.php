@@ -5,6 +5,8 @@ spl_autoload_register(function ($classname){
     $filename = "./libs/$classname.class.php";
 
     //如果类文件存在，则包含
+    //如果类文件存在，则包含
+    //如果类文件存在，则包含
     if (file_exists($filename)) require_once ($filename);
 });
 
