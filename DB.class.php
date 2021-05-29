@@ -2,7 +2,6 @@
 class DB
 {
     private static $obj = null;
-
     private $db_host;
     private $db_user;
     private $db_pass;
@@ -102,17 +101,17 @@ class DB
         return mysqli_fetch_all($result,$types[$type]);
     }
 
-    public function fetchOne($sql,$type =3)
+    public function fetchOne($sql,$type = 3)
     {
         $result = $this->query($sql);
 
-        $types = array(
-            1 => MYSQLI_NUM,
-            2 => MYSQLI_BOTH,
-            3 => MYSQLI_ASSOC
-        );
 
-        return mysqli_fetch_all($result,$types[$type]);
+        $types = array(
+            1 =>MYSQLI_NUM,
+            2 =>MYSQLI_BOTH,
+            3 =>MYSQLI_ASSOC,
+        );
+        return mysqli_fetch_array($result,$types[$type]);
     }
 
     
@@ -135,3 +134,6 @@ $arr = array(
 );
 
 $obj = DB::getInstance($arr);
+
+$a = $obj->fetchOne("select * from test where id = 1");
+var_dump($a);
